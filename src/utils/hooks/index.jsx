@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createContext } from "react";
 
 export function useFetch(url) {
 
@@ -16,7 +17,7 @@ export function useFetch(url) {
                 const data = await response.json()                
                 setData(data)            
             } catch (err) {            
-                console.log(err)                
+                console.log('========',err)                
                 setError(true)            
             } finally {            
                 setLoading(false)            
@@ -27,4 +28,19 @@ export function useFetch(url) {
     }, [url])
     
     return { isLoading, dataUser, error }    
+}
+
+export const MockedContext = createContext()
+
+export function MockedProvider({children}){
+    const [isMocked, setMocked] = useState(false)
+    const toggleContext = () => {
+        setMocked(isMocked === false ? true : false)
+    }
+ 
+    return (
+        <MockedContext.Provider value={{ isMocked, toggleContext }}>
+            {children}
+        </MockedContext.Provider>
+    )
 }

@@ -1,4 +1,7 @@
 import { useParams } from "react-router-dom"
+import { Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { MockedContext } from "../../utils/hooks";
 
 import { 
     useFetch 
@@ -12,59 +15,59 @@ import {
     
 } from "../../utils/dataFormatted/dataFormatted";    
 
-import styled from "styled-components";
+import './index.css'
 import Loader from "../../components/Loader";
 
 //************************************************** */
 //
 //************************************************** */
 
-const SectionApp = styled.section`
-    padding: 68px 90px 86px 226px
-
-`
-const FirstNameH1 = styled.h1`
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-`
-const FirstNameSpan = styled.span`
-    color: #FF0101;
-`
-
-const FirstParagraphe = styled.p`
-    margin-top: 41px;
-    font-weight: 400;
-    font-size: 18px;
-`
-
 function Profils(){
 
     let { userId } = useParams()
+    let { isMocked } = useContext(MockedContext)
 
+    let urlDataOfTheUser = isMocked === false ? `http://localhost:3000/user/${userId}` : `../dataMocked/userMainData${userId}.json`
+   
+    let urlDataOfUserActivity = isMocked === false ? `http://localhost:3000/user/${userId}/activity` : `../dataMocked/userActivityData${userId}.json` 
+    let urlDataOfUserAverageSession = isMocked === false ? `http://localhost:3000/user/${userId}/average-sessions` : `../dataMocked/userAverageSession${userId}.json` 
+    let urlDataOfUserPerformance = isMocked === false ? `http://localhost:3000/user/${userId}/performance` : `../dataMocked/userPerformanceData${userId}.json` 
+
+    console.log(urlDataOfTheUser, '===', isMocked)
+    
     let fetchDataOfTheUser 
     let fetchDataOfUserActivity 
     let fetchDataOfUserAverageSession 
-    let fetchDataOfUserPerformance 
+    let fetchDataOfUserPerformance
 
     let dataOfUser
     let dataOfUserActivity
     let dataOfUserAverageSession
     let dataOfUserPerformance
 
-
-    fetchDataOfTheUser = useFetch(`http://localhost:3000/user/${userId}`)
-    fetchDataOfUserActivity = useFetch(`http://localhost:3000/user/${userId}/activity`)
-    fetchDataOfUserAverageSession = useFetch(`http://localhost:3000/user/${userId}/average-sessions`)
-    fetchDataOfUserPerformance = useFetch(`http://localhost:3000/user/${userId}/performance`)
+    
+    fetchDataOfTheUser = useFetch(urlDataOfTheUser)
+    fetchDataOfUserActivity = useFetch(urlDataOfUserActivity)
+    fetchDataOfUserAverageSession = useFetch(urlDataOfUserAverageSession)
+    fetchDataOfUserPerformance = useFetch(urlDataOfUserPerformance)
+    
+    // if(fetchDataOfTheUser.error ||
+    //     fetchDataOfUserActivity.error ||
+    //     fetchDataOfUserAverageSession.error ||
+    //     fetchDataOfUserPerformance.error
+    // ){
+    //     return <div>
+    //         Oops! Une errrur est survenu lors du chargement des données
+    //         <Navigate to="*" replace={true} /> 
+    //     </div>
+    // } 
     
     
-    
-    !fetchDataOfTheUser.isLoading ? (dataOfUser = new userData(fetchDataOfTheUser.dataUser.data)) : (dataOfUser = undefined)
-    !fetchDataOfUserActivity.isLoading ? (dataOfUserActivity = new userActivity(fetchDataOfUserActivity.dataUser.data)) : (dataOfUserActivity = undefined)
-    !fetchDataOfUserAverageSession.isLoading ? (dataOfUserAverageSession = new userSessionAverage(fetchDataOfUserAverageSession.dataUser.data)) : (dataOfUserAverageSession = undefined)
-    !fetchDataOfUserPerformance.isLoading ? (dataOfUserPerformance = new userPerformance(fetchDataOfUserPerformance.dataUser.data)) : (dataOfUserPerformance = undefined)
-
+    !fetchDataOfTheUser.isLoading ? (dataOfUser = new userData(fetchDataOfTheUser.dataUser.data)) : (dataOfUser = null)
+    !fetchDataOfUserActivity.isLoading ? (dataOfUserActivity = new userActivity(fetchDataOfUserActivity.dataUser.data)) : (dataOfUserActivity = null)
+    !fetchDataOfUserAverageSession.isLoading ? (dataOfUserAverageSession = new userSessionAverage(fetchDataOfUserAverageSession.dataUser.data)) : (dataOfUserAverageSession = null)
+    !fetchDataOfUserPerformance.isLoading ? (dataOfUserPerformance = new userPerformance(fetchDataOfUserPerformance.dataUser.data)) : (dataOfUserPerformance = null)
+    console.log(fetchDataOfTheUser)
 
     console.log(dataOfUser)
     console.log(dataOfUserActivity)
@@ -72,26 +75,19 @@ function Profils(){
     console.log(dataOfUserPerformance)
 
 
-    // if(error ||
-    //     error ||
-    //     error ||
-    //     error
-    // ){
-    //     return <div>
-    //         Oops! Une errrur est survenu lors du chargement des données
-    //     </div>
-    // } 
     
     
-    return fetchDataOfTheUser.isLoading ? 
+    return fetchDataOfTheUser.isLoading === undefined ?
+    (<Navigate to="*" replace={true} />) :
     
+    fetchDataOfTheUser.isLoading ? 
     <Loader/> : 
     
-    <SectionApp>
+    <section>
        
-        <FirstNameH1>Bonjour <FirstNameSpan>{dataOfUser.firstName}</FirstNameSpan></FirstNameH1>
-        <FirstParagraphe>Félicitation ! Vous avez explosé vos objectifs hier 👏</FirstParagraphe>
+        <h1 className="firstName-title">Bonjour <span className="firstName-name">{dataOfUser.firstName}</span></h1>
+        <p className="firstName-text">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
 
-    </SectionApp>
+    </section>
 }
 export default Profils
