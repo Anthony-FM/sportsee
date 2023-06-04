@@ -1,0 +1,27 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 180px;
+
+}
+.card:hover{
+    transform: scale(1.1);
+    background-color: thistle;
+    border-radius: 20px;
+    padding: 2%;
+}
+
+.card-img{
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-link{
+    text-decoration: none;
+    color: #FF0101;
+    font-size: 16px;
+    font-weight: 500;
+}
