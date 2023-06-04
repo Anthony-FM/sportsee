@@ -1,0 +1,15 @@
+.firstName-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+}
+
+.firstName-name {
+    color: #FF0101;
+}
+
+.firstName-text {
+    margin-top: 41px;
+    font-weight: 400;
+    font-size: 18px;    
+}
