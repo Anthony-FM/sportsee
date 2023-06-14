@@ -2,6 +2,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
+    margin: auto;
 }
 
 .firstName-name {
@@ -9,7 +10,143 @@
 }
 
 .firstName-text {
-    margin-top: 41px;
+    margin-top: 2% /*41px;*/;
     font-weight: 400;
     font-size: 18px;    
+}
+
+.profil-section{
+    display: grid;    
+}
+
+.nutrition-container{
+    grid-column: 4;
+    grid-row: 1/5;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    align-content: space-between;
+    grid-gap: 3%;
+}
+
+.profil-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3%;
+    grid-auto-rows: minmax(100px, auto);
+    
+}
+.dailyActivity-container{
+    grid-column: 1/4;
+    grid-row: 1/3;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 2% 2% 3% ;
+    align-items: center;
+}
+.trainingSession-container{
+    grid-column: 1/4;
+    grid-row: 3/5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2%;
+}
+
+.titleDailyActivity{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.titleDailyActivity > h2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #20253A;
+}
+
+
+.lengends{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+.legends-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.black{
+    background: #282D30;
+}
+
+.red{
+    background: #E60000;
+}
+
+.legends-text{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #74798C;
+}
+
+.lineChart-container{
+    grid-column: 1;
+}
+
+.radarChart-container{
+    grid-column: 2;
+}
+
+.radialBarChart-container{
+    grid-column: 3;
+}
+
+.radarChart-container{
+    width: 100%;
+    height: 100%;
+    background: #282D30;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lineChart-container{
+    background: #FF0000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    position: relative;
+}
+
+.legendText{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    position: absolute;
+    height: 48px;
+    left: 15%;
+    top: 2%;
+    width: 60%;
+
 }
