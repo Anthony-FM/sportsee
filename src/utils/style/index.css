@@ -11,7 +11,8 @@ font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 section {
-  padding: 5% 7% 10% 20%
+  padding: 2% 3% 2% 15%;
+  height: calc(100vh - 91px);
 }
 
 
