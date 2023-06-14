@@ -33,11 +33,26 @@ export class userActivity{
 export class userSessionAverage{
     constructor(data){
         this.id = data.userId;
+        this.dayLetter = this.DayLetter()
 
         this.sessions = data.sessions.map((session) => ({
-            day: session.day,
+            day: this.dayLetter[session.day],
             sessionLength: session.sessionLength
         }))
+    }
+
+    DayLetter(){
+        const dayLetter = {
+            1: "L",
+            2: "M",
+            3: "M",
+            4: "J",
+            5: "V",
+            6: "S",
+            7: "D"
+          }
+        
+          return dayLetter
     }
 }
 
