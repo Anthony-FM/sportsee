@@ -1,0 +1,14 @@
+.tooltipLineChart{
+    width: 39px;
+    height: 25px;
+    background: #FFFFFF;
+}
+    
+.tooltipLineChart > p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
