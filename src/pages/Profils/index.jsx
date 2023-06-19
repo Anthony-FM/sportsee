@@ -33,54 +33,60 @@ function Profils(){
     let { userId } = useParams()
     let { isMocked } = useContext(MockedContext)
 
-    let urlDataOfTheUser = isMocked === false ? `http://localhost:3000/user/${userId}` : `../dataMocked/userMainData${userId}.json`
-    let urlDataOfUserActivity = isMocked === false ? `http://localhost:3000/user/${userId}/activity` : `../dataMocked/userActivityData${userId}.json` 
-    let urlDataOfUserAverageSession = isMocked === false ? `http://localhost:3000/user/${userId}/average-sessions` : `../dataMocked/userAverageSession${userId}.json` 
-    let urlDataOfUserPerformance = isMocked === false ? `http://localhost:3000/user/${userId}/performance` : `../dataMocked/userPerformanceData${userId}.json` 
+    let urlDataOfTheUser = isMocked === false ? `http://localhost:3000/user/${userId}` : `./dataMocked/userMainData${userId}.json`
+    let urlDataOfUserActivity = isMocked === false ? `http://localhost:3000/user/${userId}/activity` : `./dataMocked/userActivityData${userId}.json` 
+    let urlDataOfUserAverageSession = isMocked === false ? `http://localhost:3000/user/${userId}/average-sessions` : `./dataMocked/userAverageSession${userId}.json` 
+    let urlDataOfUserPerformance = isMocked === false ? `http://localhost:3000/user/${userId}/performance` : `./dataMocked/userPerformanceData${userId}.json` 
 
+    
     console.log(urlDataOfTheUser, '=== is data mocked? ===>', isMocked)
     
     let fetchDataOfTheUser = useFetch(urlDataOfTheUser)
     let fetchDataOfUserActivity = useFetch(urlDataOfUserActivity)
     let fetchDataOfUserAverageSession = useFetch(urlDataOfUserAverageSession)
-    let fetchDataOfUserPerformance = useFetch(urlDataOfUserPerformance)
+    let fetchDataOfUserPerformance = useFetch(urlDataOfUserPerformance)    
 
-    if(fetchDataOfTheUser.dataUser === "can not get user" || 
+    if( fetchDataOfTheUser.dataUser === "can not get user" ||
         fetchDataOfTheUser.error || 
         fetchDataOfUserActivity.error ||
         fetchDataOfUserAverageSession.error ||
         fetchDataOfUserPerformance.error
     ){
+        console.log("error is here")
         return <div>
             <Navigate to="*" replace={true} />            
         </div>
     } 
-    console.log(fetchDataOfTheUser)
-
+    
     let dataOfUser = fetchDataOfTheUser.isLoading === false ? new userData(fetchDataOfTheUser.dataUser.data) :  null;
     let dataOfUserActivity = fetchDataOfUserActivity.isLoading === false ?  new userActivity(fetchDataOfUserActivity.dataUser.data) : null;
     let dataOfUserAverageSession =  fetchDataOfUserAverageSession.isLoading === false ?  new userSessionAverage(fetchDataOfUserAverageSession.dataUser.data) : null
     let dataOfUserPerformance =  fetchDataOfUserPerformance.isLoading === false ? new userPerformance(fetchDataOfUserPerformance.dataUser.data) : null
     
-    
+    console.log(fetchDataOfTheUser)
+    console.log(fetchDataOfTheUser)
+    console.log(fetchDataOfUserActivity)
+    console.log(fetchDataOfUserAverageSession)
+    console.log(fetchDataOfUserPerformance)
 
     
     return (
-        fetchDataOfTheUser.error ||
-        fetchDataOfUserActivity.error ||
-        fetchDataOfUserAverageSession.error ||
-        fetchDataOfUserPerformance.error
+            dataOfUser === null ||
+            dataOfUserActivity === null || 
+            dataOfUserAverageSession === null || 
+            dataOfUserPerformance === null 
+        ) ? 
+            <Loader/> :
+        (
+            fetchDataOfTheUser.error ||
+            fetchDataOfUserActivity.error ||
+            fetchDataOfUserAverageSession.error ||
+            fetchDataOfUserPerformance.error
         ) ?
 
         (<Navigate to="*" replace={true} />) :
         
-        (
-            dataOfUser === null || 
-            dataOfUserActivity === null ||
-            dataOfUserAverageSession === null ||
-            dataOfUserPerformance === null 
-        ) ? 
-        <Loader/> : 
+         
         
         <section className="profil-section">
             <div className="profil-title">
@@ -122,10 +128,6 @@ function Profils(){
                     </div>
                     <div className="radialBarChart-container">
                         <h3>Score</h3>
-                        {/* <div className="radialBarChart-circle">
-                            <span className="leradialBarChart-title">{dataOfUser.score}% <br /></span>
-                            de votre<br /> objectif
-                        </div> */}
                         <RadialBarChartScore data={dataOfUser.score}/>
                     </div>
                 </div>
