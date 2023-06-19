@@ -129,8 +129,8 @@
 
 .radialBarChart-container  h3{
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 0px;
+    left: 16px;
 }
 
 .radarChart-container{
