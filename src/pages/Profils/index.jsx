@@ -22,6 +22,7 @@ import NutritionItem from "../../components/NutritionItem";
 import DailyActivity from "../../components/DailyActivity";
 import RadarChartTypeActivity from "../../components/RadarChartTypeActivity";
 import LineChartAverageSession from "../../components/LineChartAverageSession";
+import RadialBarChartScore from "../../components/RadialBarChartScore";
 
 //************************************************** */
 //
@@ -45,6 +46,7 @@ function Profils(){
     let fetchDataOfUserPerformance = useFetch(urlDataOfUserPerformance)
 
     if(fetchDataOfTheUser.dataUser === "can not get user" || 
+        fetchDataOfTheUser.error || 
         fetchDataOfUserActivity.error ||
         fetchDataOfUserAverageSession.error ||
         fetchDataOfUserPerformance.error
@@ -73,7 +75,7 @@ function Profils(){
         (<Navigate to="*" replace={true} />) :
         
         (
-            dataOfUser === null ||
+            dataOfUser === null || 
             dataOfUserActivity === null ||
             dataOfUserAverageSession === null ||
             dataOfUserPerformance === null 
@@ -107,7 +109,7 @@ function Profils(){
                 </div>
                 <div className="trainingSession-container">
                     <div className="lineChart-container">
-                        
+
                         <p className="legendText">Durée moyenn des sessions</p>                    
                         
                         <LineChartAverageSession data={dataOfUserAverageSession}/>
@@ -119,7 +121,12 @@ function Profils(){
                         
                     </div>
                     <div className="radialBarChart-container">
-
+                        <h3>Score</h3>
+                        {/* <div className="radialBarChart-circle">
+                            <span className="leradialBarChart-title">{dataOfUser.score}% <br /></span>
+                            de votre<br /> objectif
+                        </div> */}
+                        <RadialBarChartScore data={dataOfUser.score}/>
                     </div>
                 </div>
                 
