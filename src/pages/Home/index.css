@@ -8,7 +8,7 @@
 }
 
 .card-button{
-    grid-column: 1/3;
+    
     width: 300px;
     color: #FF0101;
     background-color: #FFF;
@@ -26,6 +26,14 @@
 
 .home-section{
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggleContainer{
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
