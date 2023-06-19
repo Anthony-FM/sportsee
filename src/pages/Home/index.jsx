@@ -15,7 +15,7 @@ function Home(){
     
     let buttonText = isMocked === true  ? "Activer les données API" : "Activer les données Mockée"
     let text = isMocked ? "Vous êtes sur les données mockée:" : "Vous êtes sur les données API:"
-    console.log(isMocked, buttonText)
+    console.log(isMocked, text)
 
     return <section className='home-section'>
         <div className='card-container'>
