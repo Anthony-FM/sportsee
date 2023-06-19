@@ -1,3 +1,19 @@
+# Sportsee
+L'objectif du projet est de réaliser une page Dashboard d'un profil sportif et d'intégrer la partie TODO des User Story avec React et Recharts.
+## Les contraintes :
+- Le projet a uniquement une version Desktop avec une limite min de 1024 x 780px
+- Utilisation et initialisation du backend (Fetch ou Axios)
+- Réalisation des call API en dehors des composants
+- Création des mocks des données de l'API
+- Création de classe de modélisation des données
+- Respecter la maquette => 💻 : https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?type=design&node-id=1-2&t=SvYlttdcDihIbGu1-0
+- Respecter les User Story => 💻 : https://openclassrooms.notion.site/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e
+
+### GitHub Pages
+⚠️ Attention! Seul les données mocké seront disponible 
+💻: https://anthony-fm.github.io/sportsee/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
