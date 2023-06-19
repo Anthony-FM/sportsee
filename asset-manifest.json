@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sportsee/static/css/main.e613d2b8.css",
-    "main.js": "/sportsee/static/js/main.591b12a0.js",
+    "main.js": "/sportsee/static/js/main.95834b22.js",
     "static/media/male-user.png": "/sportsee/static/media/male-user.a6143582309785dca610.png",
     "static/media/user-female.png": "/sportsee/static/media/user-female.5a80e44a78da23d00a67.png",
     "static/media/logo.svg": "/sportsee/static/media/logo.837414860efdf652f26ae7be654e06c5.svg",
@@ -15,10 +15,10 @@
     "static/media/energy.svg": "/sportsee/static/media/energy.5db5a3aff9bd8f441f49792782c8262e.svg",
     "static/media/dumbbell-icon.svg": "/sportsee/static/media/dumbbell-icon.4fe7fb9fe3554121b3d42dcb489eefd0.svg",
     "main.e613d2b8.css.map": "/sportsee/static/css/main.e613d2b8.css.map",
-    "main.591b12a0.js.map": "/sportsee/static/js/main.591b12a0.js.map"
+    "main.95834b22.js.map": "/sportsee/static/js/main.95834b22.js.map"
   },
   "entrypoints": [
     "static/css/main.e613d2b8.css",
-    "static/js/main.591b12a0.js"
+    "static/js/main.95834b22.js"
   ]
 }
