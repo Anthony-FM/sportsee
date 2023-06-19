@@ -32,7 +32,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 3%;
-    grid-auto-rows: minmax(100px, auto);
+    /* grid-auto-rows: minmax(100px, auto); */
     
 }
 .dailyActivity-container{
@@ -50,9 +50,12 @@
 .trainingSession-container{
     grid-column: 1/4;
     grid-row: 3/5;
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2%;
+    grid-gap: 2%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .titleDailyActivity{
@@ -108,15 +111,17 @@
 
 .lineChart-container{
     grid-column: 1;
+    width: 32%;
 }
 
 .radarChart-container{
     grid-column: 2;
+    width: 32%;
 }
 
 .radialBarChart-container{
     grid-column: 3;
-    width: 100%;
+    width: 32%;
     height: 100%;
     background: #FBFBFB;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
@@ -134,7 +139,7 @@
 }
 
 .radarChart-container{
-    width: 100%;
+    width: 32%;
     height: 100%;
     background: #282D30;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
