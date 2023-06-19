@@ -40,12 +40,13 @@ function RadialBarChartScore({data}){
             outerRadius="50%"
             data={scores}  
             startAngle={80} 
-            endAngle={440}            
+            endAngle={440}     
         >
          <circle cx="50%" cy="50%" fill="white" r="50"></circle>
           <RadialBar 
             legendType="line"             
-            dataKey="score"            
+            dataKey="score"  
+            cornerRadius="10"          
           />
 
           <Legend content={<CustomLegend/>} verticalAlign="middle" width="100%" height="100%" align="center" wrapperStyle={style}/>
