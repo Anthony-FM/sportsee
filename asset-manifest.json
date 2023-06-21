@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.e613d2b8.css",
-    "main.js": "/static/js/main.f7a706d9.js",
-    "static/media/male-user.png": "/static/media/male-user.a6143582309785dca610.png",
-    "static/media/user-female.png": "/static/media/user-female.5a80e44a78da23d00a67.png",
-    "static/media/logo.svg": "/static/media/logo.837414860efdf652f26ae7be654e06c5.svg",
-    "static/media/swim-icon.svg": "/static/media/swim-icon.e26dba434236828a108a786d8215cd31.svg",
-    "static/media/bike-icon.svg": "/static/media/bike-icon.d516c0e89dbb3aaab23afac6a130ca06.svg",
-    "static/media/apple.svg": "/static/media/apple.aa0e74661df8c71ea59cbe777ac24615.svg",
-    "index.html": "/index.html",
-    "static/media/cheeseburger.svg": "/static/media/cheeseburger.82c6cb9fd2b3e6307fca82c2f796ed14.svg",
-    "static/media/chicken.svg": "/static/media/chicken.c285979616f56dc9dfa457e51c583d68.svg",
-    "static/media/yoga-icon.svg": "/static/media/yoga-icon.6c31a2775a609d06fd5d99eb347250ed.svg",
-    "static/media/energy.svg": "/static/media/energy.5db5a3aff9bd8f441f49792782c8262e.svg",
-    "static/media/dumbbell-icon.svg": "/static/media/dumbbell-icon.4fe7fb9fe3554121b3d42dcb489eefd0.svg",
-    "main.e613d2b8.css.map": "/static/css/main.e613d2b8.css.map",
-    "main.f7a706d9.js.map": "/static/js/main.f7a706d9.js.map"
+    "main.css": "/sportsee/static/css/main.e613d2b8.css",
+    "main.js": "/sportsee/static/js/main.46e0909e.js",
+    "static/media/male-user.png": "/sportsee/static/media/male-user.a6143582309785dca610.png",
+    "static/media/user-female.png": "/sportsee/static/media/user-female.5a80e44a78da23d00a67.png",
+    "static/media/logo.svg": "/sportsee/static/media/logo.837414860efdf652f26ae7be654e06c5.svg",
+    "static/media/swim-icon.svg": "/sportsee/static/media/swim-icon.e26dba434236828a108a786d8215cd31.svg",
+    "static/media/bike-icon.svg": "/sportsee/static/media/bike-icon.d516c0e89dbb3aaab23afac6a130ca06.svg",
+    "static/media/apple.svg": "/sportsee/static/media/apple.aa0e74661df8c71ea59cbe777ac24615.svg",
+    "index.html": "/sportsee/index.html",
+    "static/media/cheeseburger.svg": "/sportsee/static/media/cheeseburger.82c6cb9fd2b3e6307fca82c2f796ed14.svg",
+    "static/media/chicken.svg": "/sportsee/static/media/chicken.c285979616f56dc9dfa457e51c583d68.svg",
+    "static/media/yoga-icon.svg": "/sportsee/static/media/yoga-icon.6c31a2775a609d06fd5d99eb347250ed.svg",
+    "static/media/energy.svg": "/sportsee/static/media/energy.5db5a3aff9bd8f441f49792782c8262e.svg",
+    "static/media/dumbbell-icon.svg": "/sportsee/static/media/dumbbell-icon.4fe7fb9fe3554121b3d42dcb489eefd0.svg",
+    "main.e613d2b8.css.map": "/sportsee/static/css/main.e613d2b8.css.map",
+    "main.46e0909e.js.map": "/sportsee/static/js/main.46e0909e.js.map"
   },
   "entrypoints": [
     "static/css/main.e613d2b8.css",
-    "static/js/main.f7a706d9.js"
+    "static/js/main.46e0909e.js"
   ]
 }
