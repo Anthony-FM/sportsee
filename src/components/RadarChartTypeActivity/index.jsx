@@ -3,7 +3,6 @@ import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Responsi
 
 
 function RadarChartTypeActivity({data}){
-    console.log(data.dataPerformance)
     return <ResponsiveContainer width="100%" height="100%" >
         <RadarChart   data={data.dataPerformance} margin={{top: 5, right: 60, left: 60, bottom: 5 }}>
             <PolarGrid gridType="polygon" radialLines={false} />

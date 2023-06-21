@@ -15,7 +15,6 @@ function RadialBarChartScore({data}){
     ]
 
     function CustomLegend(payload){
-        console.log(payload.payload[0].payload.score)
         return <div className="radialBarChart-circle">
                 <span className="radialBarChart-title">{payload.payload[0].payload.score}% <br /></span>
                 de votre<br /> objectif

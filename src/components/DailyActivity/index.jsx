@@ -13,7 +13,6 @@ function DailyActivity({sessions}){
             </div>)
         }
     }
-    console.log("dataActivity: ",sessions, "===")
     
     return <ResponsiveContainer width="100%" height="100%">
         <BarChart data={sessions}>

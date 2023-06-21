@@ -37,9 +37,6 @@ function Profils(){
     let urlDataOfUserActivity = isMocked === false ? `http://localhost:3000/user/${userId}/activity` : `../dataMocked/userActivityData${userId}.json` 
     let urlDataOfUserAverageSession = isMocked === false ? `http://localhost:3000/user/${userId}/average-sessions` : `../dataMocked/userAverageSession${userId}.json` 
     let urlDataOfUserPerformance = isMocked === false ? `http://localhost:3000/user/${userId}/performance` : `../dataMocked/userPerformanceData${userId}.json` 
-
-    
-    console.log(urlDataOfTheUser, '=== is data mocked? ===>', isMocked)
     
     let fetchDataOfTheUser = useFetch(urlDataOfTheUser)
     let fetchDataOfUserActivity = useFetch(urlDataOfUserActivity)
@@ -52,7 +49,7 @@ function Profils(){
         fetchDataOfUserAverageSession.error ||
         fetchDataOfUserPerformance.error
     ){
-        console.log("error is here")
+        
         return <div>
             <Navigate to="*" replace={true} />            
         </div>
@@ -62,14 +59,7 @@ function Profils(){
     let dataOfUserActivity = fetchDataOfUserActivity.isLoading === false ?  new userActivity(fetchDataOfUserActivity.dataUser.data) : null;
     let dataOfUserAverageSession =  fetchDataOfUserAverageSession.isLoading === false ?  new userSessionAverage(fetchDataOfUserAverageSession.dataUser.data) : null
     let dataOfUserPerformance =  fetchDataOfUserPerformance.isLoading === false ? new userPerformance(fetchDataOfUserPerformance.dataUser.data) : null
-    
-    console.log(fetchDataOfTheUser)
-    console.log(fetchDataOfTheUser)
-    console.log(fetchDataOfUserActivity)
-    console.log(fetchDataOfUserAverageSession)
-    console.log(fetchDataOfUserPerformance)
-
-    
+        
     return (
             dataOfUser === null ||
             dataOfUserActivity === null || 

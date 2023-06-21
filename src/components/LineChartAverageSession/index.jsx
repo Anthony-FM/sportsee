@@ -5,15 +5,14 @@ import './index.css'
 
 
 function LineChartAverageSession({data}){
-    console.log(data.sessions)
 
-    function CustomTooltip({active, payload}){
-      if(active && payload){
-          return (<div className='tooltipLineChart'>
-              <p>{`${payload[0].value}mn`}</p>
-              
-          </div>)
-      }
+  function CustomTooltip({active, payload}){
+    if(active && payload){
+        return (<div className='tooltipLineChart'>
+            <p>{`${payload[0].value}mn`}</p>
+            
+        </div>)
+    }
   }
 
     
