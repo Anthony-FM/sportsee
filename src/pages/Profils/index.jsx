@@ -33,10 +33,10 @@ function Profils(){
     let { userId } = useParams()
     let { isMocked } = useContext(MockedContext)
 
-    let urlDataOfTheUser = isMocked === false ? `http://localhost:3000/user/${userId}` : `./dataMocked/userMainData${userId}.json`
-    let urlDataOfUserActivity = isMocked === false ? `http://localhost:3000/user/${userId}/activity` : `./dataMocked/userActivityData${userId}.json` 
-    let urlDataOfUserAverageSession = isMocked === false ? `http://localhost:3000/user/${userId}/average-sessions` : `./dataMocked/userAverageSession${userId}.json` 
-    let urlDataOfUserPerformance = isMocked === false ? `http://localhost:3000/user/${userId}/performance` : `./dataMocked/userPerformanceData${userId}.json` 
+    let urlDataOfTheUser = isMocked === false ? `http://localhost:3000/user/${userId}` : `../dataMocked/userMainData${userId}.json`
+    let urlDataOfUserActivity = isMocked === false ? `http://localhost:3000/user/${userId}/activity` : `../dataMocked/userActivityData${userId}.json` 
+    let urlDataOfUserAverageSession = isMocked === false ? `http://localhost:3000/user/${userId}/average-sessions` : `../dataMocked/userAverageSession${userId}.json` 
+    let urlDataOfUserPerformance = isMocked === false ? `http://localhost:3000/user/${userId}/performance` : `../dataMocked/userPerformanceData${userId}.json` 
 
     
     console.log(urlDataOfTheUser, '=== is data mocked? ===>', isMocked)
