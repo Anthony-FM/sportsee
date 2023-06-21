@@ -42,7 +42,7 @@ function RadialBarChartScore({data}){
             startAngle={80} 
             endAngle={440}     
         >
-         <circle cx="50%" cy="50%" fill="white" r="50"></circle>
+         <circle cx="50%" cy="50%" fill="white" r="23%"></circle>
           <RadialBar 
             legendType="line"             
             dataKey="score"  
