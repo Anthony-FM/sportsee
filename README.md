@@ -10,7 +10,7 @@ L'objectif du projet est de réaliser une page Dashboard d'un profil sportif et 
 - Respecter les User Story => 💻 : https://openclassrooms.notion.site/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e
 
 ### GitHub Pages
-⚠️ Attention! Seul les données mocké seront disponible 
+⚠️ Attention! Seuls les données mockées seront disponible (sauf si vous avez accès à l'API)
 💻: https://anthony-fm.github.io/sportsee/
 
 
